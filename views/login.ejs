@@ -1,0 +1,22 @@
+<%- include('partials/head') %>
+<div class="container">
+<form action="/login" method="post">
+    <h2>Login</h2>
+    <div class="mb-3">
+        <label for="username" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <% if(errorMessage) { %>
+        <p style="color: red;"> <%= errorMessage %> </p>
+    <% } %>
+    <button type="submit" class="bg-button">Entrar</button>
+    <a style="text-decoration: underline; color:black" href="/cadastro">Não tenho cadastro</a>
+  </form>
+</div>
+<script src="/js/script.js"></script>
+<%- include('partials/footer') %>
+

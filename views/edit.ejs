@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Manga Store - Admin</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <h1>Editar Manga</h1>
+  <form method="post" action="/obra/edit/<%= obra._id %>">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" value="<%= obra.nome %>" required>
+    <br>
+    <label for="preco">Preço:</label>
+    <input type="number" name="preco" value="<%= obra.preco %>" required>
+    <br>
+    <label for="estoque">Estoque:</label>
+    <input type="number" name="estoque" value="<%= obra.estoque %>" required> <!-- Adicionando o campo "estoque" -->
+    <br>
+    <label for="imagemURL">URL da Imagem:</label>
+    <input type="text" name="imagemURL" value="<%= obra.imagemURL %>" required>
+    <br>
+    <button type="submit">Salvar Alterações</button>
+  </form>
+  <br>
+  <a href="/admin">Voltar para a Lista</a>
+</body>
+</html>

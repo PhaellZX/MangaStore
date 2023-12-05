@@ -1,0 +1,32 @@
+<%- include('partials/head') %>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const compraSucesso = urlParams.get('compraSucesso');
+
+      if (compraSucesso === 'true') {
+          alert('Compra Finalizada Com Sucesso! Volte Sempre! :D');
+      }
+  });
+</script>
+<div class="grid-container">
+  <% for (let i = 0; i < obras.length; i++) { %>
+    <div class="grid-item">
+      <a href="/produto/<%= obras[i]._id %>"><img src="<%= obras[i].imagemURL %>" alt="Imagem da Obra <%= i + 1 %>"></a>
+      <h2><%= obras[i].nome %></h2>
+      <p>Preço: R$ <%= obras[i].preco.toFixed(2) %></p>
+      <% if (obras[i].estoque > 0) { %>
+        <p>Estoque: <%= obras[i].estoque %></p>
+        <a href="/produto/<%= obras[i]._id %>"><button>Add Carrinho</button></a>
+      <% } else { %>
+        <p style="color: red;">ESGOTADO</p>
+      <% } %>
+    </div>
+  <% } %>
+</div>
+<% if (typeof successMessage !== 'undefined' && successMessage) { %>
+  <script>
+    alert('<%= successMessage %>');
+  </script>
+<% } %>
+<%- include('partials/footer') %>

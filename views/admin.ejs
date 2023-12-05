@@ -1,0 +1,68 @@
+<html>
+<head>
+  <title>Manga Store - Admin</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <script src="/js/jquery-3.5.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Função para ordenar as obras por nome
+      function ordenarObras() {
+        var listaObras = $('#obras-lista');
+        var obras = listaObras.children('li').get();
+
+        obras.sort(function (a, b) {
+          var nomeA = $(a).text().toUpperCase();
+          var nomeB = $(b).text().toUpperCase();
+          return nomeA.localeCompare(nomeB);
+        });
+
+        $.each(obras, function (index, elemento) {
+          listaObras.append(elemento);
+        });
+      }
+
+      // Chama a função de ordenação ao carregar a página
+      ordenarObras();
+    });
+  </script>
+</head>
+<body>
+  <h1>Banco de Dados</h1>
+  <div class="container__item">
+    <form class="form">
+      <input type="text" class="search" placeholder="Buscar Manga" />
+      <button type="submit" class="search-button">
+        <img src="/imgs/search.svg"/>
+      </button>
+    </form>
+  </div>  
+  <ul id="obras-lista">
+    <% obras.forEach(obra => { %>
+      <li>
+        <%= obra.nome %> | R$ <%= obra.preco %> | Qtd <%= obra.estoque %> -> <a href="/obra/edit/<%= obra._id %>">Editar</a> | <a href="/obra/delete/<%= obra._id %>">Excluir</a>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/obra/create">Adicionar Obra</a><br>
+  <a href="/">Voltar para Manga Store</a>
+</body>
+<script>
+  $(document).ready(function () {
+  $('.form').on('submit', function (event) {
+      event.preventDefault();
+      var searchTerm = $('.search').val().toLowerCase();
+
+      $('#obras-lista li').each(function () {
+          var itemName = $(this).text().toLowerCase();
+          if (itemName.includes(searchTerm)) {
+              $(this).show();
+          } else {
+              $(this).hide();
+          }
+      });
+  });
+});
+</script>
+</html>

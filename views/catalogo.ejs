@@ -1,0 +1,59 @@
+<%- include('partials/head') %>
+<style>
+    .catalogo-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .catalogo-lista {
+        list-style: none;
+        padding: 0;
+    }
+
+    .catalogo-item {
+        display: flex;
+        align-items: left;
+        margin-bottom: 20px;
+    }
+
+    .catalogo-imagem img {
+        width: 150px;
+        margin-right: 20px;
+    }
+
+    .catalogo-dados {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: flex-start;
+    }
+
+    .catalogo-dados button {
+        margin-top: 10px; 
+        text-align: center;
+    }
+</style>
+<div class="catalogo-container">
+    <ul class="catalogo-lista">
+        <% for (let i = 0; i < obras.length; i++) { %>
+            <li class="catalogo-item">
+                <div class="catalogo-imagem">
+                    <a href="/produto/<%= obras[i]._id %>"><img width="10%" src="<%= obras[i].imagemURL %>" alt="Imagem da Obra <%= i + 1 %>"></a>
+                </div>
+                <div class="catalogo-dados">
+                    <h2><%= obras[i].nome %></h2>
+                    <p>Preço: R$ <%= obras[i].preco.toFixed(2) %></p>
+                    <% if (obras[i].estoque > 0) { %>
+                        <p>Estoque: <%= obras[i].estoque %></p>
+                        <a href="/produto/<%= obras[i]._id %>"><button>Add Carrinho</button></a>
+                    <% } else { %>
+                        <p style="color: red;">ESGOTADO</p>
+                    <% } %>
+                </div>
+            </li>
+        <% } %>
+    </ul>
+</div>
+
+<%- include('partials/footer') %>

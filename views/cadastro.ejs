@@ -1,0 +1,72 @@
+<%- include('partials/head') %>
+<div class="container">
+    <form action="/cadastro" method="post" onsubmit="return validateForm()">
+        <h2>Cadastro</h2>
+        <!-- Adicione uma div para mostrar a mensagem de erro -->
+        <div id="errorMessage" class="alert alert-danger" style="<%= errorMessage ? '' : 'display: none;' %>">
+            <%= errorMessage %>
+        </div>
+
+        <!-- Restante do formulário -->
+        <div class="mb-3">
+            <label for="username" class="form-label">Nome de Usuário</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Repetir Senha</label>
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+        </div>
+        <button type="submit" class="bg-button">Cadastrar</button>
+    </form>
+    <br>
+</div>
+<script src="/js/script.js"></script>
+<script>
+    // Função para validar o formulário antes de enviar
+    function validateForm() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+
+        // Verifica se a mensagem de erro está sendo exibida
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Realiza a validação dos campos
+        if (!username || !password || !confirmPassword || !email || !address) {
+            errorMessage.innerText = 'Todos os campos devem ser preenchidos.';
+            errorMessage.style.display = 'block';
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            errorMessage.innerText = 'As senhas não coincidem.';
+            errorMessage.style.display = 'block';
+            return false;
+        }
+
+        // Adiciona validação básica para o nome de usuário não estar vazio
+        if (!username.trim()) {
+            errorMessage.innerText = 'Por favor, preencha o campo Nome de Usuário.';
+            errorMessage.style.display = 'block';
+            return false;
+        }
+
+        // Se não houver mensagem de erro, permite o envio do formulário
+        return true;
+    }
+</script>
+<%- include('partials/footer') %>

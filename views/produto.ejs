@@ -1,0 +1,41 @@
+<%- include('partials/head') %>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img width="50%" class="center" src="<%= obra.imagemURL %>" alt="">
+        </div>
+        <div class="col-sm">
+            <h2><%= obra.nome %></h2>
+            <form id="formQuantidade" action="/carrinho/<%= obra._id %>" method="post">
+                <div class="row align-items-center">
+                    <span id="preco">Preço unitário: R$ <%= obra.preco.toFixed(2) %></span>
+                    <span id="estoque">Estoque disponível: <%= obra.estoque %></span>
+                    <div class="col-auto">
+                        <label for="quantidade" class="col-form-label">Quantidade:</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" name="quantidade" id="quantidade" class="form-control" value="1" min="1" required>
+                    </div>
+                    <button type="submit" class="bg-button">Adicionar ao Carrinho</button> 
+                </div>
+            </form>
+            <div id="error-message" style="color: red;"></div>
+            <button type="submit" class="bg-button"><a style="color: white; padding-left: 200px; padding-right: 200px;" href="/">Voltar</a></button>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('formQuantidade').addEventListener('submit', function(event) {
+        var estoque = parseInt('<%= obra.estoque %>'); 
+        var quantidadeInput = document.getElementById('quantidade');
+        var errorMessage = document.getElementById('error-message');
+
+        if (parseInt(quantidadeInput.value) > estoque) {
+            errorMessage.innerText = 'Quantidade excede o estoque disponível';
+            event.preventDefault(); 
+        } else {
+            errorMessage.innerText = '';
+        }
+    });
+</script>
+<%- include('partials/footer') %>

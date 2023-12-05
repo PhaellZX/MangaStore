@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('fonts/BebasNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+  }
+  
+
+h1, p, h2{ 
+    margin: 20px;
+    text-align: center;
+}
+
+footer{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn{
+    width: 180px;
+}
+
+#formQuantidade{
+    margin-top:35px;
+}
+
+#preco{
+    margin-bottom:35px;
+    font-weight: bold;
+}
+
+#quantCar{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-logo{
+    position: relative;
+    margin-left: -41.5%;
+}
+.login-logo img{
+    position: absolute;
+    width: 20%;
+    margin-top: 19%;
+    background: #282726;
+    border-radius: 4.5rem;
+    padding: 5%;
+}
+.login-form-1{
+    padding: 9%;
+    background:#282726;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color:#fff;
+}
+.login-form-2{
+    padding: 9%;
+    background: #f05837;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color: #fff;
+}
+.btnSubmit{
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+.btnForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btnForgetPwd:hover{
+    text-decoration:none;
+    color:#fff;
+}
+
+.bg-custom {
+    background-color: #800000 !important; 
+  }
+  .container__item {
+    text-align: center;
+  }
+  
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 13px;
+  }
+  
+  .search-button {
+    padding: 3px 3px;
+    background-color: #800000; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; 
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #330000; 
+  }
+
+  .search-button img {
+    width: 35px; 
+    height: 35px; 
+    vertical-align: middle;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .grid-item {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .grid-item img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #800000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #330000;
+  }
+
+  .bg-button{
+    background-color: #800000;
+    padding: 10px 10px 10px 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .bg-button:hover {
+    background-color: #330000;
+  }
+
+  .comprovante-container {
+    text-align: center;
+    background-color: #fefecc; /* Cor amarelada */
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); /* Sombra embaixo */
+    font-style: italic;
+    max-width: 350px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    top: 10%; /* Posiciona no meio vertical */
+    left: 33%; /* Posiciona no meio horizontal */
+    color: black; /* Cor do texto preto */
+}
+
+.comprovante-container h2 {
+    margin-bottom: 10px;
+}
+
+.comprovante-container strong {
+    display: block;
+    margin-top: 10px;
+}
+
+.comprovante-container a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.comprovante-container a:hover {
+    background-color: black;
+    color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  padding-left: 585px;
+  margin: 0;
+}
+
+button img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.navnav {
+  position: fixed;
+  width: 100%;
+  z-index: 3000; 
+}
+
+.grid-item {
+  padding-top: 80px;
+}
+
+.catalogo-imagem{
+  padding-top: 150px;
+}
+
+.container{
+  padding-top: 100px;
+}
+
+input {
+  text-align: center;
+}

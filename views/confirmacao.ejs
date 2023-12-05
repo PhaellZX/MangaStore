@@ -1,0 +1,22 @@
+<%- include('partials/head') %>
+<br><br><br>
+<div class="comprovante-container">
+    <h2>Finalizar Compra?</h2>
+    <br/>
+    <p><b>Nome: </b><%= currentUser.username %></p>
+    <p><b>E-mail: </b><%= currentUser.email %></p>
+    <p><b>Endereço: </b><%= currentUser.address %></p>
+    <ul>
+        <% carrinhoItens.forEach(item => { %>
+            <li>
+                <%= item.obra.nome %> - <%= item.quantidade %> unidades - R$ <%= (item.quantidade * item.obra.preco).toFixed(2) %>
+            </li>
+        <% }); %>
+    </ul>
+    <p><b>Total: </b>R$ <%= total.toFixed(2) %></p>
+</div>
+<form id="formFinalizarCompra" action="/finalizar" method="post">
+    <button style="text-align: center;"type="submit" class="bg-button">Comprar Agora!</button>
+</form>
+<%- include('partials/footer') %>
+
