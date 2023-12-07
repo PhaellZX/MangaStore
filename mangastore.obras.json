@@ -1,60 +1,50 @@
-[{
-  "_id": {
-    "$oid": "656f7d32410d063a90bb34c0"
+[
+  {
+    "_id": "656f7d32410d063a90bb34c0",
+    "nome": "hunter x hunter - vol 1",
+    "preco": 35,
+    "imagemURL": "https://m.media-amazon.com/images/I/61NPpt5HC6L._AC_UF1000,1000_QL80_.jpg",
+    "estoque": 50,
+    "__v": 0
   },
-  "nome": "hunter x hunter - vol 1",
-  "preco": 35,
-  "imagemURL": "https://m.media-amazon.com/images/I/61NPpt5HC6L._AC_UF1000,1000_QL80_.jpg",
-  "estoque": 50,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "656f7d73410d063a90bb34c1"
+  {
+    "_id": "656f7d73410d063a90bb34c1",
+    "nome": "one piece - vol 1",
+    "preco": 25,
+    "imagemURL": "https://m.media-amazon.com/images/I/71y+XnBXm4L._AC_UF1000,1000_QL80_.jpg",
+    "estoque": 30,
+    "__v": 0
   },
-  "nome": "one piece - vol 1",
-  "preco": 25,
-  "imagemURL": "https://m.media-amazon.com/images/I/71y+XnBXm4L._AC_UF1000,1000_QL80_.jpg",
-  "estoque": 30,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "656f7dcc410d063a90bb34c2"
+  {
+    "_id": "656f7dcc410d063a90bb34c2",
+    "nome": "Full Metal Alchemist - Vol 1",
+    "preco": 50,
+    "imagemURL": "https://m.media-amazon.com/images/I/51HW0wQziGL.jpg",
+    "estoque": 10,
+    "__v": 0
   },
-  "nome": "Full Metal Alchemist - Vol 1",
-  "preco": 50,
-  "imagemURL": "https://m.media-amazon.com/images/I/51HW0wQziGL.jpg",
-  "estoque": 10,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "656f7e24410d063a90bb34c3"
+  {
+    "_id": "656f7e24410d063a90bb34c3",
+    "nome": "Dragon ball z - vol 1",
+    "preco": 40,
+    "imagemURL": "https://m.media-amazon.com/images/I/81Dy6cNM7yL._AC_UF1000,1000_QL80_.jpg",
+    "estoque": 25,
+    "__v": 0
   },
-  "nome": "Dragon ball z - vol 1",
-  "preco": 40,
-  "imagemURL": "https://m.media-amazon.com/images/I/81Dy6cNM7yL._AC_UF1000,1000_QL80_.jpg",
-  "estoque": 25,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "656f7e79410d063a90bb34c4"
+  {
+    "_id": "656f7e79410d063a90bb34c4",
+    "nome": "Naruto - vol 1",
+    "preco": 40,
+    "imagemURL": "https://m.media-amazon.com/images/I/91xUwI2UEVL._AC_UF1000,1000_QL80_.jpg",
+    "estoque": 30,
+    "__v": 0
   },
-  "nome": "Naruto - vol 1",
-  "preco": 40,
-  "imagemURL": "https://m.media-amazon.com/images/I/91xUwI2UEVL._AC_UF1000,1000_QL80_.jpg",
-  "estoque": 30,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "656f7f91410d063a90bb34c5"
-  },
-  "nome": "Bleach - vol 1",
-  "preco": 65,
-  "imagemURL": "https://m.media-amazon.com/images/I/51ZLlQ1wq2L.jpg",
-  "estoque": 20,
-  "__v": 0
-}]
+  {
+    "_id": "656f7f91410d063a90bb34c5",
+    "nome": "Bleach - vol 1",
+    "preco": 65,
+    "imagemURL": "https://m.media-amazon.com/images/I/51ZLlQ1wq2L.jpg",
+    "estoque": 20,
+    "__v": 0
+  }
+]
