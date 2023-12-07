@@ -9,13 +9,34 @@ const Obra = require('./models/obras');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
+const fs = require('fs');
+
+// Função para carregar dados de um arquivo JSON para o banco de dados
+const carregarDados = async (nomeDoArquivo, Modelo) => {
+    try {
+      const dados = JSON.parse(fs.readFileSync(nomeDoArquivo, 'utf-8'));
+      await Modelo.insertMany(dados);
+      console.log(`Dados do arquivo ${nomeDoArquivo} carregados com sucesso.`);
+    } catch (error) {
+      console.error(`Erro ao carregar dados do arquivo ${nomeDoArquivo}: ${error}`);
+    }
+  };
 
 //Windows 10
 //mongoose.connect("mongodb://localhost/dbLojaCamisetas", {useNewUrlParser: true, useUnifiedTopology: true})
 //Windows 11
 mongoose.connect("mongodb://127.0.0.1/mangastore")
-    .then(() => {console.log('Conexão estabelecida com o banco!');})
-    .catch(err => {console.log("Erro ao conectar com o banco:" + err);});
+  .then(() => {
+    console.log('Conexão estabelecida com o banco!');
+    
+    // Carregar dados para as coleções obras e users
+    carregarDados('mangastore.obras.json', Obra);
+    carregarDados('mangastore.admin.json', User);
+  })
+  .catch(err => {
+    console.log("Erro ao conectar com o banco:" + err);
+  });
+
 
 app.use(flash());
 app.use(bodyParser.urlencoded({ extended: true }));
