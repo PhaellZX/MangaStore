@@ -3,7 +3,6 @@
 ![image](https://github.com/PhaellZX/MangaStore/assets/48337836/bc322dd7-8bd6-4084-99ca-edc8da8304aa)
 
 O MangaStore é um site de vendas online de mangás desenvolvido com Node.js e Express, oferecendo aos fãs da cultura japonesa uma experiência de compra única. Com uma interface intuitiva e amigável, os usuários podem explorar uma vasta coleção de mangás de diferentes gêneros e autores.​
-The manga sales site, built with Node.js and MongoDB, offers Japanese culture lovers a unique online shopping experience. With an intuitive and user-friendly interface,
 
 ## Funcionalidades
 
