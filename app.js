@@ -10,6 +10,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const fs = require('fs');
+const MongoStore = require('connect-mongo');
+
+require('dotenv').config();
 
 // Função para carregar dados de um arquivo JSON para o banco de dados
 const carregarDados = async (nomeDoArquivo, Modelo) => {
@@ -25,7 +28,7 @@ const carregarDados = async (nomeDoArquivo, Modelo) => {
 //Windows 10
 //mongoose.connect("mongodb://localhost/dbLojaCamisetas", {useNewUrlParser: true, useUnifiedTopology: true})
 //Windows 11
-mongoose.connect("mongodb://127.0.0.1/mangastore")
+mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.u6bk12m.mongodb.net/albanewsBD`)
   .then(() => {
     console.log('Conexão estabelecida com o banco!');
     
@@ -47,7 +50,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({extended: true}));
 
-app.use(session({secret:'meu_segredo...', resave: false, saveUninitialized: true}));
+// Configuração de Sessão com MongoDB Store
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.u6bk12m.mongodb.net/albanewsBD`}),
+}));
 
 app.use(passport.initialize()); 
 app.use(passport.session()); 
